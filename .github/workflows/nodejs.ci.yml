@@ -25,6 +25,9 @@ jobs:
       - name: Install dependencies
         run: yarn --immutable
 
+      - name: Check code style
+        run: yarn format:check
+
       - name: Lint source code
         run: yarn lint
 
@@ -61,3 +64,26 @@ jobs:
 
       - name: Run semgrep scan
         run: ./bin/run-semgrep.sh
+
+  build:
+    name: Build
+    strategy:
+      matrix:
+        os: [ ubuntu-22.04, windows-latest ]
+        node-version: [ 18.x, 20.x, 22.x ]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup node
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'yarn'
+
+      - name: Install dependencies
+        run: yarn --immutable
+
+      - name: Build library
+        run: yarn build

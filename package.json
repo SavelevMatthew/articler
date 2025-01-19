@@ -2,20 +2,28 @@
   "name": "articler",
   "version": "0.0.0-development",
   "description": "Simple util to publish and sync your articles",
-  "main": "index.js",
-  "scripts": {
-    "lint": "prettier --check src",
-    "test": "echo \"No tests found\""
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+ssh://git@github.com/SavelevMatthew/articler.git"
-  },
   "keywords": [
     "markdown",
     "articles",
     "publishing"
   ],
+  "scripts": {
+    "format:check": "prettier --check src",
+    "format:write": "prettier --write src",
+    "lint": "eslint .",
+    "package": "tsup",
+    "build": "yarn format:write && yarn package",
+    "test": "echo \"No tests found\""
+  },
+  "types": "dist/index.d.mts",
+  "module": "dist/index.mjs",
+  "files": [
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/SavelevMatthew/articler.git"
+  },
   "author": {
     "name": "Matthew Savelev",
     "email": "savelevmatthew@gmail.com",
@@ -27,7 +35,17 @@
   },
   "homepage": "https://github.com/SavelevMatthew/articler#readme",
   "devDependencies": {
-    "prettier": "^3.4.2"
+    "@eslint/js": "^9.18.0",
+    "@types/node": "^22.10.7",
+    "eslint": "^9.18.0",
+    "eslint-import-resolver-typescript": "^3.7.0",
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-jest": "^28.11.0",
+    "jest": "^29.7.0",
+    "prettier": "^3.4.2",
+    "tsup": "^8.3.5",
+    "typescript": "^5.7.3",
+    "typescript-eslint": "^8.20.0"
   },
   "packageManager": "yarn@4.6.0"
 }
