@@ -1,0 +1,33 @@
+{
+  "name": "articler",
+  "version": "0.0.0-development",
+  "description": "Simple util to publish and sync your articles",
+  "main": "index.js",
+  "scripts": {
+    "lint": "prettier --check src",
+    "test": "echo \"No tests found\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/SavelevMatthew/articler.git"
+  },
+  "keywords": [
+    "markdown",
+    "articles",
+    "publishing"
+  ],
+  "author": {
+    "name": "Matthew Savelev",
+    "email": "savelevmatthew@gmail.com",
+    "url": "https://github.com/SavelevMatthew"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/SavelevMatthew/articler/issues"
+  },
+  "homepage": "https://github.com/SavelevMatthew/articler#readme",
+  "devDependencies": {
+    "prettier": "^3.4.2"
+  },
+  "packageManager": "yarn@4.6.0"
+}
