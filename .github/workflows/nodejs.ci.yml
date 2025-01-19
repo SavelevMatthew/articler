@@ -16,6 +16,9 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      - name: Enable corepack
+        run: corepack enable
+
       - name: Setup Node.js environment
         uses: actions/setup-node@v4
         with:
@@ -33,6 +36,9 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+
+      - name: Enable corepack
+        run: corepack enable
 
       - name: Setup Node.js environment
         uses: actions/setup-node@v4
