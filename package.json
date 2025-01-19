@@ -4,6 +4,7 @@
   "description": "Simple util to publish and sync your articles",
   "main": "index.js",
   "scripts": {
+    "lint": "prettier --check src",
     "test": "echo \"No tests found\""
   },
   "repository": {
